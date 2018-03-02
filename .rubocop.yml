@@ -11,5 +11,13 @@ AllCops:
 Metrics/LineLength:
   Max: 120
 
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
 Style/Documentation:
   Enabled: false
+
+Style/StringLiterals:
+  Exclude:
+    - 'spec/rails_helper.rb'
