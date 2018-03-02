@@ -1,0 +1,2 @@
+class SellableItem < ApplicationRecord
+end
