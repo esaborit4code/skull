@@ -18,3 +18,22 @@ Ingredient.create([
 Ingredient.find_each do |ingredient|
   Resource.create(item: ingredient)
 end
+
+SellableItem.create([
+  { name: 'Espardenyes pudentes', value: 2 },
+  { name: 'Pinta de fallera', value: 3 },
+  { name: 'Gaiata de la Magdalena', value: 4 },
+  { name: 'Tirant lo Blanc', value: 5 }
+])
+
+item = SellableItem.find_by(name: 'Tirant lo Blanc')
+Resource.create(item: item)
+
+item = SellableItem.find_by(name: 'Gaiata de la Magdalena')
+2.times { Resource.create(item: item) }
+
+item = SellableItem.find_by(name: 'Pinta de fallera')
+3.times { Resource.create(item: item) }
+
+item = SellableItem.find_by(name: 'Espardenyes pudentes')
+4.times { Resource.create(item: item) }
