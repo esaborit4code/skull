@@ -8,6 +8,10 @@ AllCops:
     - 'script/**/*'
     - 'bin/**/*'
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
 Metrics/LineLength:
   Max: 120
 
