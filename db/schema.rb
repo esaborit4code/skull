@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180302205140) do
+ActiveRecord::Schema.define(version: 20180302210255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,4 +21,16 @@ ActiveRecord::Schema.define(version: 20180302205140) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "resources", force: :cascade do |t|
+    t.string "item_type"
+    t.bigint "item_id"
+    t.bigint "player_id"
+    t.boolean "gone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_type", "item_id"], name: "index_resources_on_item_type_and_item_id"
+    t.index ["player_id"], name: "index_resources_on_player_id"
+  end
+
+  add_foreign_key "resources", "players"
 end
